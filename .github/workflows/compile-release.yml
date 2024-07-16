@@ -12,7 +12,6 @@ jobs:
   build:
     name: Build Apache Ranger
     runs-on: ubuntu-latest
-    needs: discover-new-releases
     steps:
       - name: Download Apache Ranger
         id: download-ranger 
