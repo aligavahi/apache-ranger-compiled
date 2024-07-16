@@ -24,9 +24,9 @@ jobs:
       - name: Download Apache Hive
         id: download-ranger 
         run: |
-          wget -nv "https://github.com/aligavahi/hive/archive/refs/tags/ali2.tar.gz" -O "hive-3.1.3.tar.gz"
+          wget -nv "https://github.com/aligavahi/hive/archive/refs/tags/ali3.tar.gz" -O "hive-3.1.3.tar.gz"
           tar zxf hive-3.1.3.tar.gz
-          cd hive-ali2
+          cd hive-ali3
           mvn clean compile package -DskipTests
 
       - name: Create release 3.1.3
@@ -42,7 +42,7 @@ jobs:
         
       - name: Publish Apache Hive 3.1.3
         run: |
-          cd hive-ali2/target
+          cd hive-ali3/target
           for asset in *.{tar.gz,jar}; do
             curl -H "Authorization: token ${{ secrets.ALI_TK }}" -H "Content-Type: $(file -b --mime-type $asset)" --data-binary @$asset "${{ steps.create-release.outputs.upload_url }}=$(basename $asset)"
           done
