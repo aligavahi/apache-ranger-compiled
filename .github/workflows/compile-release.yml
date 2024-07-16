@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - 'main'
-  schedule:
-    - cron: '0 4 * * 3'
 
 defaults:
   run:
@@ -115,8 +113,8 @@ jobs:
       - name: Check Apache Ranger ${{ matrix.version }} as released
         run: |
           cd apache-ranger-compiled
-          git config user.email "z0beat@gmail.com"
-          git config user.name "zer0beat"
+          git config user.email "aligavahi1376@gmail.com"
+          git config user.name "ali.gavahi"
           git pull --rebase origin main
           echo ${{ matrix.version }} >> ./compiled
           git add compiled
