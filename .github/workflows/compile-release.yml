@@ -2,7 +2,7 @@ name: Compile Apache Ranger
 on:
   push:
     branches:
-      - 'main'
+      - 'hive'
 
 defaults:
   run:
