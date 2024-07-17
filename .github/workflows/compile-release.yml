@@ -34,7 +34,7 @@ jobs:
         id: create-release
         uses: actions/create-release@v1.1.4
         env:
-          ALI_TK: ${{ secrets.ALI_TK }}
+          GITHUB_TOKEN: ${{ secrets.ALI_TK }}
         with:
           tag_name: 3.1.3
           release_name: Apache hive 3.1.3
