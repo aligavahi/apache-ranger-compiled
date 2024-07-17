@@ -33,14 +33,16 @@ jobs:
           prerelease: false
 
 
-      - name: Download Apache Hive
+      - name: build Apache Hive
         id: download-ranger 
         run: |
           wget -nv "https://github.com/apache/hive/archive/refs/tags/rel/release-3.1.3.tar.gz" -O "hive-3.1.3.tar.gz"
           tar zxf hive-3.1.3.tar.gz
           cd hive-rel-release-3.1.3
-          mvn clean compile package -DskipTests --settings ../settings.yml
-          cd hive-rel-release-3.1.3/packaging/target
+          mvn clean compile package -DskipTests -Pdist --settings ../settings.yml
+          ls
+          pwd
+          cd packaging/target
           ls
           for asset in *.{tar.gz,jar}; do
             curl -H "Authorization: token ${{ secrets.ALI_TK }}" -H "Content-Type: $(file -b --mime-type $asset)" --data-binary @$asset "${{ steps.create-release.outputs.upload_url }}=$(basename $asset)"
