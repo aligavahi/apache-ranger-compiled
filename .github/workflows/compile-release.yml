@@ -38,10 +38,10 @@ jobs:
         run: |
           wget -nv "https://github.com/aligavahi/hive/archive/refs/tags/release-3.1.4.tar.gz" -O "hive-3.1.4.tar.gz"
           tar zxf hive-3.1.4.tar.gz
-          cd release-3.1.4
+          ls
+          cd hive-release-3.1.4
           mvn clean compile package -DskipTests -Pdist --settings ../settings.yml
           ls
-          pwd
           cd packaging/target
           ls
           for asset in *.{tar.gz,jar}; do
