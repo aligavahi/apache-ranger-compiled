@@ -3,7 +3,7 @@
   <mirror>
     <id>wenselconjars</id>
     <mirrorOf>conjars</mirrorOf>
-    <url>https://conjars.wensel.net/repo/</url>
+    <url>https://archiva.wikimedia.org/repository/mirrored</url>
   </mirror>
 </mirrors>
 </settings>
