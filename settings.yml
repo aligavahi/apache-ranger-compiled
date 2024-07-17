@@ -3,4 +3,14 @@
   <id>conjars.org</id>
   <url>https://conjars.wensel.net/repo/</url>
 </repository>
+
+  <mirrors>
+    <mirror>
+      <id>internal-repository</id>
+      <name>Maven Repository Manager replace for conjar</name>
+      <url>https://conjars.wensel.net/repo/</url>
+      <mirrorOf>external:http:conjars*</mirrorOf>
+    </mirror>
+  </mirrors>
+
 </settings>
